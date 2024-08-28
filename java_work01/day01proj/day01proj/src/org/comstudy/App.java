@@ -1,6 +1,9 @@
 package org.comstudy;
 
 // Servlet&JSP는 Eclipse에서 하는것이 편함.
+
+import java.util.Scanner;
+
 // JAVA 기본이나 Srping boot는 VS-Code도 편함.
 // 이유는 VS-Code가 가볍고 편함.
 // 그리고 많은 확장기능이 있다.
@@ -19,9 +22,13 @@ public class App {
         // String은 문자열을 다루는 타입으로 기본형처럼 쓰이는 참조형(클래스)
 
         // 키보드 입력
+        Scanner scan = new Scanner(System.in);
 
         String greeting = "안녕 세계";
+        System.out.print("이름 입력: ");
+        String name = scan.next();
 
         System.out.println(greeting);
+        System.out.println(name);
     }
 }
