@@ -112,7 +112,6 @@ class Finish implements Command {
 		PhoneBookApp.printTitle("FINISH");
 		System.out.println("프로세스 종료! 수고하셨습니다. ");
 		
-
 		// 프로세스 강제 종료
 		System.exit(0);
 	}
