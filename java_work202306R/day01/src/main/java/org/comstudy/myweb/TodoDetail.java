@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/todo/input")
-public class TodoInput extends HttpServlet {
+@WebServlet("/todo/detail")
+public class TodoDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String path="/WEB-INF/views/TodoInput.jsp";
+		String path="/WEB-INF/views/TodoDetail.jsp";
 		RequestDispatcher view = req.getRequestDispatcher(path);
 		view.forward(req, res);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 }
