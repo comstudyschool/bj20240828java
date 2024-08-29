@@ -26,12 +26,18 @@
 
 // src영역에 선언된 JAVA 객체 바로 사용 가능.(사용 할 클래스 import 필수)
 TodoVo todo = new TodoVo(101, "집안 정리하기", true);
+
+// jsp에는 out, request, response, session, application 등의 내장 객체가 미리 준비 되어 있다.
+out.println("<h3>오신 것을 환영합니다.</h3>");
 %>
 
 <p> 결과: <%= todo %> </p>
 
 <h1>Hello JSP world</h1>
-<a href="app">app 실행</a>
+<ul>
+<li><a href="app">app 실행</a></li>
+<li><a href="todo/list">TodoList</a></li>
+</ul>
 
 </body>
 </html>
