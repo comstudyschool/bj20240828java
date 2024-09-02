@@ -6,12 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public abstract class MainCommandImpl extends Command {
+public class MainCommandImpl extends Command {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return null;
+		// 처리 후 뷰네임 반환
+		System.out.println("process() - MainCommandImpl");
+		return "main";
 	}
 
 }
