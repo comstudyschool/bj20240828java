@@ -12,9 +12,9 @@
 <h3>전화번호부</h3>
 <hr/>
 <ul>
-	<li><a href="list.phone">전화번호 목록</a></li>
-	<li><a href="input.phone">전화번호 등록</a></li>
-	<li><a href="search.phone">전화번호 조회</a></li>
+	<li><a href="phone/list.do">전화번호 목록</a></li>
+	<li><a href="phone/input.do">전화번호 등록</a></li>
+	<li><a href="phone/search.do">전화번호 조회</a></li>
 </ul>
 
 <%
