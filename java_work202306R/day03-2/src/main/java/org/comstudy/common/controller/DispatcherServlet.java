@@ -35,7 +35,7 @@ public class DispatcherServlet extends HttpServlet {
 		while (keyIter.hasNext()) {
 			String command = (String) keyIter.next();
 			String handlerClassName = prop.getProperty(command);
-			System.out.println(command+ " : " +handlerClassName);
+			//System.out.println(command+ " : " +handlerClassName);
 			try {
 				Class<?> commandClass = Class.forName(handlerClassName);
 				// Command instance = (Command) handlerClass.newInstance();
@@ -54,7 +54,7 @@ public class DispatcherServlet extends HttpServlet {
 		if (reqURI.indexOf(req.getContextPath()) == 0) {
 			reqURI = reqURI.substring(req.getContextPath().length());
 		}
-		System.out.println("reqURI >>> " + reqURI);
+		//System.out.println("reqURI >>> " + reqURI);
 		Command handler = null;
 		if("/".equals(reqURI)) {
 			handler = commandMap.get("/index.do");
@@ -70,7 +70,7 @@ public class DispatcherServlet extends HttpServlet {
 				viewName = "404";
 			}
 		}
-		System.out.println("viewName >>> " + viewName);
+		//System.out.println("viewName >>> " + viewName);
 		if (viewName != null) {
 			String prefix = getInitParameter("prefix");
 			String suffix = getInitParameter("suffix");
