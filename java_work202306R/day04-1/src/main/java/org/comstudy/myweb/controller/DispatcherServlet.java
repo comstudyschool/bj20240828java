@@ -29,4 +29,12 @@ public class DispatcherServlet extends HttpServlet {
 		RequestDispatcher view = req.getRequestDispatcher(prefix+ viewName + suffix);
 		view.forward(req, resp);		
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String name = req.getParameter("name");
+		System.out.println("name >>> " + name);
+		
+		resp.sendRedirect("home.do");
+	}
 }
