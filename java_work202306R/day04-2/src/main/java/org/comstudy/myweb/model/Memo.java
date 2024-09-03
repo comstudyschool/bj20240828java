@@ -1,6 +1,13 @@
 package org.comstudy.myweb.model;
 
 public class Memo {
+	/*
+	CREATE TABLE MEMO(
+		ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		TITLE VARCHAR(50) NOT NULL,
+		CONTENT VARCHAR(50)
+	)
+	 */
 	private int id;
 	private String title;
 	private String content;
