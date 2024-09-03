@@ -12,9 +12,15 @@ public class MemoDAO {
 	public MemoDAO() {
 		memos = new ArrayList<Memo>();
 		nextId = 1;
+		
+		// 임시 데이터 저장
+		for(int i=0; i<5; i++) {			
+			addMemo(new Memo("제목"+i, "내용"+i));
+		}
 	}
 
 	public List<Memo> getAllMemos() {
+		System.out.println(">>>> getAllMemmos() ...");
 		return memos;
 	}
 
