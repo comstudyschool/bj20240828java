@@ -27,8 +27,8 @@ public class BlogDAO {
 	}
 
 	public Blog selectBlog(int id) {
-		try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
-			BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
+		try(SqlSession mybatis = sqlSessionFactory.openSession()) {
+			BlogMapper blogMapper = mybatis.getMapper(BlogMapper.class);
 			return blogMapper.selectBlog(id);
 		}
 	}
@@ -41,23 +41,27 @@ public class BlogDAO {
 	}
 	
 	public void insertBlog(Blog blog) {
+		System.out.println("insertBlog() - BlogDAO" + blog);
 		try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
 			BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
-			return blogMapper.insertBlog();
+			blogMapper.insertBlog(blog);
+			sqlSession.commit(); // update되었을때는 commit해야 적용 됨.
 		}
 	}
 	
 	public void updateBlog(Blog blog) {
 		try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
 			BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
-			return blogMapper.updateBlog();
+			blogMapper.updateBlog(blog);
+			sqlSession.commit();
 		}
 	}
 	
 	public void deleteBlog(Blog blog) {
 		try(SqlSession sqlSession = sqlSessionFactory.openSession()) {
 			BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
-			return blogMapper.deleteBlog();
+			blogMapper.deleteBlog(blog);
+			sqlSession.commit();
 		}
 	}
 }

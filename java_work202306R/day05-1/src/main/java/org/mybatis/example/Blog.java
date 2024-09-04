@@ -15,6 +15,14 @@ public class Blog {
 		this.content = content;
 	}
 
+	public Blog(String title, String content) {
+		this(0, title, content);
+	}
+
+	public Blog(int id) {
+		this(id, null, null);
+	}
+
 	public int getId() {
 		return id;
 	}

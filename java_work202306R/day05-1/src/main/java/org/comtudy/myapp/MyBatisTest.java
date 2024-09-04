@@ -20,8 +20,28 @@ public class MyBatisTest {
 	}
 	
 	public static void main(String[] args) {
+		Blog blog = new Blog(8, "새 글8","새 글 내용8");
+		blogDao.updateBlog(blog);
+		selectAllBlogTest();
+	}
+	
+	public static void deleteBlogTest() {
+		Blog blog = new Blog(10);
+		blogDao.deleteBlog(blog);
+		selectAllBlogTest();
+	}
+	
+	public static void inserBlogTest() {
+		Blog blog = new Blog("새 글3","새 글 내용3");
+		blogDao.insertBlog(blog);
+		selectAllBlogTest();
+	}
+	
+	public static void selectAllBlogTest() {
 		List<Blog> list = blogDao.selectAllBlog();
-		System.out.println(list);
+		for(Blog blog : list) {
+			System.out.println(blog);
+		}
 	}
 	
 	public static void daoTest2(String[] args) throws IOException {

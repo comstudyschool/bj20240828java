@@ -10,4 +10,16 @@
   <select id="selectAllBlog" resultType="org.mybatis.example.Blog">
     SELECT * FROM blog
   </select>
+  
+  <insert id="insertBlog">
+  	INSERT INTO BLOG(title, content) VALUES (#{title}, #{content})
+  </insert>
+  
+  <update id="updateBlog" parameterType="org.mybatis.example.Blog">
+  	UPDATE BLOG SET title=#{title}, content=#{content} WHERE id=#{id}
+  </update>
+  
+  <delete id="deleteBlog" parameterType="org.mybatis.example.Blog">
+  	DELETE FROM blog WHERE id = #{id}
+  </delete>
 </mapper>
