@@ -6,4 +6,8 @@
   <select id="selectBlog" resultType="org.mybatis.example.Blog">
     SELECT * FROM blog WHERE id = #{id}
   </select>
+  
+  <select id="selectAllBlog" resultType="org.mybatis.example.Blog">
+    SELECT * FROM blog
+  </select>
 </mapper>
